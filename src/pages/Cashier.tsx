@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CreditCard, Receipt, BarcodeScan } from "lucide-react";
+import { CreditCard, Receipt, Barcode } from "lucide-react";
 
 export default function Cashier() {
   return (
@@ -14,7 +14,7 @@ export default function Cashier() {
             New Receipt
           </Button>
           <Button variant="outline" size="sm">
-            <BarcodeScan className="mr-2 h-4 w-4" />
+            <Barcode className="mr-2 h-4 w-4" />
             Scan Item
           </Button>
         </div>
