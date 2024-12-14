@@ -35,10 +35,13 @@ export default function Sidebar() {
                   <SidebarMenuButton
                     asChild
                     className={location.pathname === item.path ? "bg-secondary" : ""}
+                    tooltip={item.title}
                   >
-                    <Link to={item.path}>
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
+                    <Link to={item.path} className="flex items-center gap-2">
+                      <item.icon className="h-4 w-4 shrink-0" />
+                      <span className="truncate transition-opacity duration-200 group-data-[collapsible=icon]:opacity-0">
+                        {item.title}
+                      </span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
