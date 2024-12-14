@@ -5,7 +5,7 @@ import { CreditCard, Receipt, Barcode } from "lucide-react";
 
 export default function Cashier() {
   return (
-    <div className="p-6 space-y-6 relative min-h-screen pb-32">
+    <div className="p-6 space-y-6 relative min-h-screen pb-24">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Cashier</h1>
         <div className="flex gap-2">
@@ -67,33 +67,31 @@ export default function Cashier() {
       </div>
 
       {/* Payment Section - Contained within main content boundaries */}
-      <div className="absolute bottom-0 left-0 right-0 px-6">
-        <div className="max-w-full mx-auto bg-background border-t">
-          <Card className="h-[120px]">
-            <CardContent className="p-4">
-              <div className="flex justify-between items-center h-full">
-                <div className="space-y-1">
-                  <div className="flex justify-between">
-                    <span className="text-sm">Subtotal</span>
-                    <span className="text-sm">$0.00</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm">Tax</span>
-                    <span className="text-sm">$0.00</span>
-                  </div>
-                  <div className="flex justify-between font-bold">
-                    <span>Total</span>
-                    <span>$0.00</span>
-                  </div>
+      <div className="fixed bottom-6 left-6 right-6">
+        <Card className="h-[80px] mx-auto">
+          <CardContent className="p-4">
+            <div className="flex justify-between items-center h-full">
+              <div className="flex gap-8">
+                <div>
+                  <span className="text-sm text-muted-foreground">Subtotal</span>
+                  <p className="font-medium">$0.00</p>
                 </div>
-                <Button className="w-[200px]">
-                  <CreditCard className="mr-2 h-4 w-4" />
-                  Process Payment
-                </Button>
+                <div>
+                  <span className="text-sm text-muted-foreground">Tax</span>
+                  <p className="font-medium">$0.00</p>
+                </div>
+                <div>
+                  <span className="text-sm text-muted-foreground">Total</span>
+                  <p className="font-bold">$0.00</p>
+                </div>
               </div>
-            </CardContent>
-          </Card>
-        </div>
+              <Button className="w-[200px]">
+                <CreditCard className="mr-2 h-4 w-4" />
+                Process Payment
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
