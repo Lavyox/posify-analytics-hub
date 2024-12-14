@@ -66,8 +66,8 @@ export default function Cashier() {
         </div>
       </div>
 
-      {/* Payment Section - Contained within main content boundaries */}
-      <div className="md:col-span-3">
+      {/* Payment Section */}
+      <div className="mt-8">
         <Card className="h-[80px]">
           <CardContent className="p-4">
             <div className="flex justify-between items-center h-full">
