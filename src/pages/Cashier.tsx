@@ -37,60 +37,64 @@ export default function Cashier() {
               </div>
             </CardContent>
           </Card>
+        </div>
 
-          {/* Current Order Section */}
+        {/* Current Order Section - Now in the right column */}
+        <div>
           <Card>
-            <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>Current Order</CardTitle>
+            <CardHeader className="flex flex-col space-y-2">
+              <div className="flex items-center justify-between">
+                <CardTitle>Current Order</CardTitle>
+              </div>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" className="flex-1">
                   <Receipt className="mr-2 h-4 w-4" />
                   New Receipt
                 </Button>
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" className="flex-1">
                   <Barcode className="mr-2 h-4 w-4" />
                   Scan Item
                 </Button>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="h-[200px] border rounded-lg p-4">
-                <p className="text-muted-foreground text-center mt-20">
+              <div className="h-[400px] border rounded-lg p-4">
+                <p className="text-muted-foreground text-center mt-40">
                   No items added yet
                 </p>
               </div>
             </CardContent>
           </Card>
         </div>
+      </div>
 
-        {/* Payment Section - Fixed at bottom on mobile, side panel on desktop */}
-        <div className="fixed bottom-0 left-0 right-0 md:static md:block bg-background border-t md:border-0 p-4 md:p-0">
-          <Card>
-            <CardHeader>
-              <CardTitle>Payment</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
-                <div className="flex justify-between">
-                  <span>Subtotal</span>
-                  <span>$0.00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Tax</span>
-                  <span>$0.00</span>
-                </div>
-                <div className="flex justify-between font-bold">
-                  <span>Total</span>
-                  <span>$0.00</span>
-                </div>
+      {/* Payment Section - Fixed at bottom */}
+      <div className="fixed bottom-0 left-0 right-0 bg-background border-t p-4 md:px-6">
+        <Card>
+          <CardHeader>
+            <CardTitle>Payment</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span>Subtotal</span>
+                <span>$0.00</span>
               </div>
-              <Button className="w-full">
-                <CreditCard className="mr-2 h-4 w-4" />
-                Process Payment
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
+              <div className="flex justify-between">
+                <span>Tax</span>
+                <span>$0.00</span>
+              </div>
+              <div className="flex justify-between font-bold">
+                <span>Total</span>
+                <span>$0.00</span>
+              </div>
+            </div>
+            <Button className="w-full">
+              <CreditCard className="mr-2 h-4 w-4" />
+              Process Payment
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
