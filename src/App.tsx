@@ -5,6 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Cashier from "./pages/Cashier";
+import Sales from "./pages/Sales";
+import Reports from "./pages/Reports";
 import Layout from "./components/Layout";
 
 const queryClient = new QueryClient();
@@ -27,10 +30,18 @@ const App = () => (
             }
           />
           <Route
+            path="/cashier"
+            element={
+              <Layout>
+                <Cashier />
+              </Layout>
+            }
+          />
+          <Route
             path="/sales"
             element={
               <Layout>
-                <div className="p-6">Sales page coming soon...</div>
+                <Sales />
               </Layout>
             }
           />
@@ -38,7 +49,7 @@ const App = () => (
             path="/reports"
             element={
               <Layout>
-                <div className="p-6">Reports page coming soon...</div>
+                <Reports />
               </Layout>
             }
           />

@@ -1,4 +1,4 @@
-import { BarChart, Home, Settings, ShoppingCart } from "lucide-react";
+import { BarChart, Home, Settings, ShoppingCart, CreditCard } from "lucide-react";
 import { useLocation, Link } from "react-router-dom";
 import {
   Sidebar as SidebarComponent,
@@ -15,6 +15,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 
 const items = [
   { title: "Dashboard", icon: Home, path: "/dashboard" },
+  { title: "Cashier", icon: CreditCard, path: "/cashier" },
   { title: "Sales", icon: ShoppingCart, path: "/sales" },
   { title: "Reports", icon: BarChart, path: "/reports" },
   { title: "Settings", icon: Settings, path: "/settings" },
