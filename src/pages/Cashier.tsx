@@ -66,33 +66,34 @@ export default function Cashier() {
         </div>
       </div>
 
-      {/* Payment Section - Fixed at bottom with contained width */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-background border-t p-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Payment</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <div className="flex justify-between">
-                <span>Subtotal</span>
-                <span>$0.00</span>
+      {/* Payment Section - Contained within main content boundaries */}
+      <div className="absolute bottom-0 left-0 right-0 px-6">
+        <div className="max-w-full mx-auto bg-background border-t">
+          <Card className="h-[120px]">
+            <CardContent className="p-4">
+              <div className="flex justify-between items-center h-full">
+                <div className="space-y-1">
+                  <div className="flex justify-between">
+                    <span className="text-sm">Subtotal</span>
+                    <span className="text-sm">$0.00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-sm">Tax</span>
+                    <span className="text-sm">$0.00</span>
+                  </div>
+                  <div className="flex justify-between font-bold">
+                    <span>Total</span>
+                    <span>$0.00</span>
+                  </div>
+                </div>
+                <Button className="w-[200px]">
+                  <CreditCard className="mr-2 h-4 w-4" />
+                  Process Payment
+                </Button>
               </div>
-              <div className="flex justify-between">
-                <span>Tax</span>
-                <span>$0.00</span>
-              </div>
-              <div className="flex justify-between font-bold">
-                <span>Total</span>
-                <span>$0.00</span>
-              </div>
-            </div>
-            <Button className="w-full">
-              <CreditCard className="mr-2 h-4 w-4" />
-              Process Payment
-            </Button>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
