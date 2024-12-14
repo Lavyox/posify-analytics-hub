@@ -8,6 +8,16 @@ export default function Cashier() {
     <div className="p-6 space-y-6 relative min-h-screen pb-32">
       <div className="flex justify-between items-center">
         <h1 className="text-3xl font-bold">Cashier</h1>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm">
+            <Receipt className="mr-2 h-4 w-4" />
+            New Receipt
+          </Button>
+          <Button variant="outline" size="sm">
+            <Barcode className="mr-2 h-4 w-4" />
+            Scan Item
+          </Button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -39,23 +49,11 @@ export default function Cashier() {
           </Card>
         </div>
 
-        {/* Current Order Section - Now in the right column */}
+        {/* Current Order Section */}
         <div>
           <Card>
-            <CardHeader className="flex flex-col space-y-2">
-              <div className="flex items-center justify-between">
-                <CardTitle>Current Order</CardTitle>
-              </div>
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Receipt className="mr-2 h-4 w-4" />
-                  New Receipt
-                </Button>
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Barcode className="mr-2 h-4 w-4" />
-                  Scan Item
-                </Button>
-              </div>
+            <CardHeader>
+              <CardTitle>Current Order</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="h-[400px] border rounded-lg p-4">
@@ -68,8 +66,8 @@ export default function Cashier() {
         </div>
       </div>
 
-      {/* Payment Section - Fixed at bottom */}
-      <div className="fixed bottom-0 left-0 right-0 bg-background border-t p-4 md:px-6">
+      {/* Payment Section - Fixed at bottom with contained width */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-background border-t p-4">
         <Card>
           <CardHeader>
             <CardTitle>Payment</CardTitle>
